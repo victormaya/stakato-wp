@@ -10,31 +10,29 @@
     </section>
 
     <section class="container" id='painel'>
+        <?php
+        $cursos = get_field('cursos');
+        $contador=0;
+        if (isset($cursos)) { foreach ($cursos as $curso) { 
+        if ($contador%2==0){?>
         <div class='desc-curso grid-14 fadeInDown' data-anime="500">
-            <img id="teste" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/cursos/perfil-curso/foto1.svg" alt="">
+            <img id="teste" src="<?php echo $curso['foto_curso']; ?>" alt="">
             <div class="conteudo-curso" >
-                <h2 class='title-curso' >Saxofone</h2>
-                <p class='text-curso'>
-                    Lorem Ipsum é simplesmente uma simulação de texto da indústria 
-                    tipográfica e de impressos, e vem sendo utilizado desde o século XVI, 
-                    quando um impressor desconhecido pegou uma bandeja de tipos e os 
-                    embaralhou para fazer um livro de modelos de tipos.
-                </p>
+                <h2 class='title-curso' ><?php echo $curso['nome_curso']; ?></h2>
+                <p class='text-curso'><?php echo $curso['desc_curso']; ?></p>
             </div>
         </div>
+        <?php } else{ ?>
         <div class='desc-curso grid-14 fadeInDown' data-anime="900">
             <div class="conteudo-curso">
-                <h2 class='title-curso'>Violino</h2>
+                <h2 class='title-curso'><?php echo $curso['nome_curso']; ?></h2>
                 <p class='text-curso'>
-                    Lorem Ipsum é simplesmente uma simulação de texto da indústria 
-                    tipográfica e de impressos, e vem sendo utilizado desde o século XVI, 
-                    quando um impressor desconhecido pegou uma bandeja de tipos e os 
-                    embaralhou para fazer um livro de modelos de tipos.
+                    <?php echo $curso['desc_curso']; ?>
                 </p>
             </div>
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/cursos/perfil-curso/foto2.svg" alt="">
+            <img src="<?php echo $curso['foto_curso']; ?>" alt="">
         </div>
-        
+        <?php } $contador++; echo $contador;} } ?>
     </section>
     <?php endwhile; else: ?>
 <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
