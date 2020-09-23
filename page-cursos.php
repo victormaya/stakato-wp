@@ -16,7 +16,7 @@
         if (isset($cursos)) { foreach ($cursos as $curso) { 
         if ($contador%2==0){?>
         <div class='desc-curso grid-14 fadeInDown' data-anime="500">
-            <img id="teste" src="<?php echo $curso['foto_curso']; ?>" alt="">
+            <img src="<?php echo $curso['foto_curso']; ?>" alt="">
             <div class="conteudo-curso" >
                 <h2 class='title-curso' ><?php echo $curso['nome_curso']; ?></h2>
                 <p class='text-curso'><?php echo $curso['desc_curso']; ?></p>
@@ -32,7 +32,7 @@
             </div>
             <img src="<?php echo $curso['foto_curso']; ?>" alt="">
         </div>
-        <?php } $contador++; echo $contador;} } ?>
+        <?php } $contador++;} } ?>
     </section>
     <?php endwhile; else: ?>
 <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>

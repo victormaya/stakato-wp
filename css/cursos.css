@@ -29,11 +29,12 @@
 /*cards-cursos*/
 
 #painel{
-    border-radius: 25px;
+    border-radius: 10px;
     background-color:#fec63e;
     height: auto;
     padding: 15px 62px;
-    margin-bottom: 30px;;
+    margin-bottom: 30px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
 
 }
 
@@ -43,6 +44,10 @@
     justify-content: space-between;
 }
 
+.desc-curso > img{
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
 .conteudo-curso{
     display: flex;
     flex-direction: column;
@@ -50,8 +55,10 @@
     width: 577px;
     height: 180px;
     background-color: black;
-    border-radius: 25px;
+    border-radius: 10px;
     padding: 20px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    /* box-shadow: 3px 3px 5px rgba(254, 198, 62, 0.3); */
 }
 
 .title-curso{
